@@ -59,35 +59,6 @@
 				);
 			});
 
-				
-
-							var image_count = 3;
-							 var interval = 5000; //пауза
-							 var time_out = 15; //скорость смены картинки
-							 var i = 3;
-							 var timeout;
-							 var opacity = 100;
-							 function change_image() {
-							 opacity--;
-							 var j = i + 1;
-							 var current_image = 'img_' + i;
-							 if (i == image_count) j = 1;
-							 var next_image = 'img_' + j;
-							 document.getElementById(current_image).style.opacity=opacity/100;
-							 document.getElementById(current_image).style.filter='alpha(opacity='+opacity+')';
-							 document.getElementById(next_image).style.opacity= (100-opacity)/100;
-							 document.getElementById(next_image).style.filter=' alpha(opacity='+(100-opacity)+')';
-							 timeout = setTimeout("change_image()", time_out);
-							if (opacity==1) {
-							 opacity = 100;
-							 clearTimeout(timeout);
-							i++;
-							if (i>image_count) i=1;
-							timeout = setTimeout("change_image()", interval);
-							 }
-							 }
-							change_image();
-
 		// Sidebar.
 			if ($sidebar.length > 0) {
 
@@ -212,6 +183,8 @@
 						$img.hide();
 
 				});
+	
+    }); 
 
 		// Features.
 			if (skel.canUse('transition'))
@@ -231,9 +204,22 @@
 							// Activate section.
 								$(this).removeClass('inactive');
 
-						}
+						}						
 					});
 
+					$(document).scroll(function(){
+				        document_top = $(document).scrollTop();
+				        event_wapper_top = $(".features").position().top - $('#templatemo_banner_menu').outerHeight();
+				        if(document_top<event_wapper_top){
+				            event_animate_num = event_wapper_top - document_top;
+				            event_animate_alpha = (1/event_wapper_top)*(document_top);
+				            $('.features.event_animate_left').css({'left': -event_animate_num,'opacity':event_animate_alpha});
+				            $('.features.event_animate_right').css({'left':event_animate_num,'opacity':event_animate_alpha});
+				        }else{
+				            $('.features.event_animate_left').css({'left': 0,'opacity':1});
+				            $('.features.event_animate_right').css({'left':0,'opacity':1});
+				        };
 	});
 
 })(jQuery);
+

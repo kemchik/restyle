@@ -1649,7 +1649,7 @@
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
-				font-size: 13pt;
+				font-size: 10pt; /*размер боковой части*/
 			}
 
 		}
@@ -2058,7 +2058,7 @@
 	}
 
 		.features section {
-			padding: 3.5em 3em 1em 7em ;
+			padding: 3em 3em 1em 3.2em ;
 			width: 50%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
@@ -2298,7 +2298,7 @@
 
 				.field.half.first {
 					padding: 0 0.75em 0 0;
-				}		
+				}	
 
 	
 /* Icon */
@@ -2366,8 +2366,14 @@
 
 		.image {
 			display: inline;
+			position: relative;
 		}
 
+		#sliders
+		{
+			width: 100%;
+			height: 100%;
+		}
 		
 
 /* List */
@@ -2944,12 +2950,10 @@
 
 /* Wrapper */
 
-	.wrapper {
-		position: relative;
-	}
+	
 
 		.wrapper > .inner {
-			padding: 5em 5em 3em 5em ;
+			padding: 3em 3em 3em 5em ;
 			max-width: 100%;
 			width: 75em;
 		}
@@ -2957,7 +2961,7 @@
 			@media screen and (max-width: 1680px) {
 
 				.wrapper > .inner {
-					padding: 4em 4em 2em 4em ;
+					padding: 4em 2em 2em 4em ;
 				}
 
 			}
@@ -2991,7 +2995,7 @@
 		}
 
 		.wrapper.style2 {
-			background-color: #C0C0C0;
+			background-color: #976BD6;
 		}
 
 		.wrapper.style2-alt {
@@ -3479,7 +3483,7 @@
 			border: 0;
 			color: rgba(255, 255, 255, 0.35);
 			display: block;
-			font-size: 0.6em;
+			font-size: 0.8em;
 			font-weight: bold;
 			letter-spacing: 0.25em;
 			line-height: 1.75;
@@ -3664,3 +3668,163 @@
 		
 		height: 480px;
 	}
+
+/* image container*/
+
+#img_container {
+position:relative;
+height:281px;
+width:450px;
+margin:0 auto;
+}
+ 
+#img_container img {
+position:absolute;
+left:0;
+-webkit-transition: opacity 1s ease-in-out;
+-moz-transition: opacity 1s ease-in-out;
+-o-transition: opacity 1s ease-in-out;
+transition: opacity 1s ease-in-out;
+}
+
+	#img_container {
+position:relative;
+height:281px;
+width:450px;
+margin:0 auto;
+}
+ 
+#img_container img {
+position:absolute;
+left:0;
+-webkit-transition: opacity 1s ease-in-out;
+-moz-transition: opacity 1s ease-in-out;
+-o-transition: opacity 1s ease-in-out;
+transition: opacity 1s ease-in-out;
+}
+ 
+@-webkit-keyframes cf3FadeInOut {
+0% {
+opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+ 
+@-moz-keyframes cf3FadeInOut {
+0% {
+opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+ 
+@-o-keyframes cf3FadeInOut {
+0% {
+opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+ 
+@keyframes cf3FadeInOut {
+0% {
+opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+ 
+#img_container img.top {
+-webkit-animation-name: cf3FadeInOut;
+-webkit-animation-timing-function: ease-in-out;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 5s;
+-webkit-animation-direction: alternate;
+-moz-animation-name: cf3FadeInOut;
+-moz-animation-timing-function: ease-in-out;
+-moz-animation-iteration-count: infinite;
+-moz-animation-duration: 5s;
+-moz-animation-direction: alternate;
+ 
+-o-animation-name: cf3FadeInOut;
+-o-animation-timing-function: ease-in-out;
+-o-animation-iteration-count: infinite;
+-o-animation-duration: 5s;
+-o-animation-direction: alternate;
+<p style="text-align: center;">animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
+}
+
+#templatemo_events {
+    background: #6698b5;
+    float: left;
+    overflow: hidden;
+}
+#templatemo_events h1{
+    color: #fff;
+}
+#templatemo_events .event_box_wap {
+    overflow:hidden;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}
+#templatemo_events .event_box_wap .event_box_img {
+    position: relative;
+    top: 0;
+}
+#templatemo_events .event_box_wap .event_box_caption {
+    position: relative;
+    top: 0;
+    padding-bottom: 10px;
+    background: #fff;
+    width: 100%;
+    border-top: 3px solid #3c6f8c;
+}
+#templatemo_events .event_box_wap h1,
+#templatemo_events .event_box_wap p {
+    margin: 0;
+    color: #000000;
+    text-align: left;
+}
+#templatemo_events .event_box_wap p {
+    padding: 5px 20px 15px 20px;
+}
+#templatemo_events .event_box_wap h1 {
+    padding: 20px 20px 20px 20px;
+    font-size: 24px;
+    line-height: 24px;
+}
