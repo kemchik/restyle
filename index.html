@@ -17,6 +17,28 @@
 	</head>
 	<body>
 
+	<script type="text/javascript">
+		function slideSwitch() {
+			    var $active = $('#slideshow IMG.active');
+			    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+			    var $sibs  = $active.siblings();
+			    var rndNum = Math.floor(Math.random() * $sibs.length );
+			    var $next  = $( $sibs[ rndNum ] );
+			    $active.addClass('last-active');
+
+			    $next.css({opacity: 0.0})
+			       .addClass('active')
+			       .animate({opacity: 1.0}, 1000, function() {
+			                 $active.removeClass('active last-active');
+			       });
+			    }
+
+			   $(function() {
+			       setInterval( "slideSwitch()", 5000 );
+			   });
+
+	</script>
+
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
@@ -50,9 +72,11 @@
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
 							<a href="#" class = "image" >
-							<div id="img_container">					
-							<img class="bottom" src="images/pic01.jpg"/>
-							<img class="top" src="images/pic02.jpg"/>
+							<div id="slideshow">					
+							<img src="images/pic01.jpg" alt="Slideshow Image 1" class="active"/>
+							<img  src="images/pic02.jpg"  alt="Slideshow Image 2"/>
+							<img  src="images/pic03.jpg" alt="Slideshow Image 3"/>
+							<img  src="images/pic04.jpg" alt="Slideshow Image 4"/>
 							</div>	
 							</a>
 							<div class="content">
